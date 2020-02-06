@@ -1,11 +1,18 @@
 import React, { useState } from "react";
+import useServer from "../useServer";
 
 export default function Cockpit() {
+  const [setCourse] = useServer("Bouwe");
   const [engineMode, setEngineMode] = useState("impulse");
+
+  function engage() {
+    setCourse({ x: 123, y: 456 }, 10);
+  }
 
   return (
     <div className="cockpit">
       <div className="engineModePanel">
+        <button onClick={engage}>Engage!</button>
         <div>
           <input
             type="radio"
