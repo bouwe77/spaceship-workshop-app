@@ -3,10 +3,7 @@ import Engine from "./engine/Engine";
 import Cockpit from "./cockpit/Cockpit";
 
 export default function Spaceship() {
-  return (
-    <>
-      <Engine />
-      <Cockpit />
-    </>
-  );
+  const showCockpit = false;
+
+  return <>{showCockpit ? <Cockpit /> : <Engine />}</>;
 }
